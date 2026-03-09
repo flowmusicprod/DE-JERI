@@ -6,11 +6,11 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 const cardStyle = {
   style: {
     base: {
-      color: "#1b1b1b",
+      color: "#f6f7fb",
       fontFamily: "Manrope, sans-serif",
       fontSize: "16px",
       "::placeholder": {
-        color: "#6b6b6b",
+        color: "#a5acc0",
       },
     },
     invalid: {
