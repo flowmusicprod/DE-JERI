@@ -95,8 +95,8 @@ export function FloatingProductStage() {
         </div>
         <p className="stage-brand">DE&apos;JERI</p>
         <div className="stage-icons">
-          <span>◎</span>
-          <span>◌</span>
+          <span>?</span>
+          <span>?</span>
         </div>
       </div>
 
@@ -154,4 +154,5 @@ export function FloatingProductStage() {
     </section>
   );
 }
+
 

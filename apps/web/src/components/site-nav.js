@@ -2,12 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { navItems } from "@/lib/data";
 
 export function SiteNav() {
-  const pathname = usePathname();
-
   return (
     <header className="site-header">
       <nav className="main-nav shell">
@@ -26,19 +22,9 @@ export function SiteNav() {
             priority
           />
         </Link>
-        <div className="nav-links">
-          {navItems.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <Link key={item.href} href={item.href} className={active ? "active" : ""}>
-                {item.label}
-              </Link>
-            );
-          })}
-        </div>
         <div className="nav-side nav-right">
-          <Link href="/social">Instagram</Link>
-          <Link href="/social">TikTok</Link>
+          <Link href="/social">IG</Link>
+          <Link href="/social">TT</Link>
           <Link href="/atelier/login">Admin</Link>
         </div>
       </nav>
