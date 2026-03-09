@@ -12,12 +12,12 @@ export default async function CheckoutPage({ searchParams }) {
 
   if (!product) {
     return (
-      <div className="shell scene-shell">
-        <div className="scene-content section">
+      <div className="shell page-shell">
+        <div className="page-content section">
           <p className="eyebrow">Checkout</p>
           <h1>Product not found.</h1>
           <Link href="/catalog" className="btn">
-            back to catalog
+            Back to Catalog
           </Link>
         </div>
       </div>
@@ -26,13 +26,13 @@ export default async function CheckoutPage({ searchParams }) {
 
   if (!publishableKey) {
     return (
-      <div className="shell scene-shell">
-        <div className="scene-content section">
+      <div className="shell page-shell">
+        <div className="page-content section">
           <p className="eyebrow">Checkout</p>
           <h1>Stripe publishable key is missing.</h1>
           <p>Set NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY in .env.local to enable checkout.</p>
           <Link href="/catalog" className="btn">
-            return to catalog
+            Return to Catalog
           </Link>
         </div>
       </div>
@@ -40,8 +40,8 @@ export default async function CheckoutPage({ searchParams }) {
   }
 
   return (
-    <div className="shell scene-shell">
-      <div className="scene-content section">
+    <div className="shell page-shell">
+      <div className="page-content section">
         <p className="eyebrow">Secure Checkout</p>
         <h1>{product.name}</h1>
         <p>${product.price} USD</p>
@@ -57,3 +57,4 @@ export default async function CheckoutPage({ searchParams }) {
     </div>
   );
 }
+

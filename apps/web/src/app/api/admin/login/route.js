@@ -16,7 +16,7 @@ export async function POST(request) {
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    maxAge: 60 * 60 * 8,
+    maxAge: 60 * 60 * 8
   });
 
   return NextResponse.redirect(new URL("/atelier", request.url), 303);

@@ -10,7 +10,7 @@ export async function POST(request) {
     interestType: String(form.get("interestType") || ""),
     portfolioLink: String(form.get("portfolioLink") || ""),
     notes: String(form.get("notes") || ""),
-    submittedAt: new Date().toISOString(),
+    submittedAt: new Date().toISOString()
   };
 
   const supabase = createSupabaseServerClient();
@@ -21,7 +21,7 @@ export async function POST(request) {
       interest_type: payload.interestType,
       portfolio_link: payload.portfolioLink || null,
       notes: payload.notes,
-      submitted_at: payload.submittedAt,
+      submitted_at: payload.submittedAt
     });
   }
 
@@ -29,7 +29,7 @@ export async function POST(request) {
     name: payload.fullName,
     email: payload.email,
     subject: `Collaboration Application - ${payload.interestType}`,
-    message: `${payload.notes}\n\nPortfolio: ${payload.portfolioLink || "N/A"}`,
+    message: `${payload.notes}\n\nPortfolio: ${payload.portfolioLink || "N/A"}`
   });
 
   return NextResponse.redirect(new URL("/collaboration?sent=1", request.url), 303);

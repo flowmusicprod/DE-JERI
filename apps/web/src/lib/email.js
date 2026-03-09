@@ -16,24 +16,20 @@ function getResendClient() {
 }
 
 export async function sendContactEmail({ name, email, subject, message }) {
-  const client = getResendClient();
-  if (!client) {
-    return { delivered: false, reason: "Missing RESEND_API_KEY" };
-  }
-
+  const resend = getResendClient();
   const to = process.env.BRAND_CONTACT_EMAIL;
   const from = process.env.RESEND_FROM_EMAIL;
 
-  if (!to || !from) {
-    return { delivered: false, reason: "Missing BRAND_CONTACT_EMAIL or RESEND_FROM_EMAIL" };
+  if (!resend || !to || !from) {
+    return { delivered: false };
   }
 
-  const result = await client.emails.send({
+  const result = await resend.emails.send({
     from,
     to,
-    subject: `[DE'JERI Contact] ${subject}`,
+    subject: `[DE'JERI] ${subject}`,
     replyTo: email,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    text: `Name: ${name}\nEmail: ${email}\n\n${message}`
   });
 
   return { delivered: true, result };

@@ -35,8 +35,8 @@ export async function POST(request) {
     metadata: {
       sku: product.sku,
       product_name: product.name,
-      quantity: String(quantity),
-    },
+      quantity: String(quantity)
+    }
   });
 
   const supabase = createSupabaseServerClient();
@@ -48,7 +48,7 @@ export async function POST(request) {
       quantity,
       amount_cents: amount,
       customer_email: email || null,
-      status: intent.status,
+      status: intent.status
     });
   }
 
@@ -60,8 +60,8 @@ export async function POST(request) {
       name: product.name,
       sku: product.sku,
       quantity,
-      unitPrice: product.price,
-    },
+      unitPrice: product.price
+    }
   });
 }
 

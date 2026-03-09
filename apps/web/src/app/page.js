@@ -8,21 +8,22 @@ const studioLineup = [
   "/assets/catalog/products/morblackshirt_front.jpeg",
   "/assets/catalog/products/morwhiteshirt_front.jpeg",
   "/assets/catalog/products/morredshirt_front.jpeg",
-  "/assets/catalog/products/black_morframes_front.jpeg",
+  "/assets/catalog/products/black_morframes_front.jpeg"
 ];
 
 export default function HomePage() {
   return (
-    <div className="shell scene-shell">
-      <section>
+    <div className="shell page-shell">
+      <section className="hero-stage">
         <FloatingProductStage />
       </section>
-      <div className="home-followup scene-content">
+
+      <div className="home-followup page-content">
         <section className="section">
           <div className="section-title">
             <h2>Studio Product Lineup</h2>
             <Link className="btn" href="/catalog">
-              open catalog
+              Open Catalog
             </Link>
           </div>
           <article className="studio-lineup panel">
@@ -38,7 +39,7 @@ export default function HomePage() {
           <div className="section-title">
             <h2>Featured Drops</h2>
             <Link className="btn" href="/showcase">
-              experience all
+              Explore Showcase
             </Link>
           </div>
           <div className="grid cols-3">
@@ -61,7 +62,7 @@ export default function HomePage() {
           <div className="section-title">
             <h2>Shop by Piece</h2>
             <Link className="btn" href="/catalog">
-              open full catalog
+              Open Full Catalog
             </Link>
           </div>
           <div className="grid cols-3">
@@ -78,11 +79,11 @@ export default function HomePage() {
                     <div style={{ marginTop: "0.7rem" }}>
                       {product.stock === "Out of Stock" ? (
                         <a className="btn" href={`mailto:${brandContact.email}?subject=Restock%20Request%20${product.sku}`}>
-                          notify me
+                          Notify Me
                         </a>
                       ) : (
                         <Link className="btn" href={`/checkout?sku=${product.sku}`}>
-                          buy now
+                          Buy Now
                         </Link>
                       )}
                     </div>
@@ -96,3 +97,4 @@ export default function HomePage() {
     </div>
   );
 }
+

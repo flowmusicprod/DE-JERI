@@ -10,20 +10,20 @@ const orbitProducts = [
     name: "MOR Black Shirt",
     sku: "DJ-MOR-BLK",
     image: "/assets/catalog/products/morblackshirt_front.jpeg",
-    className: "orbit orbit-a",
+    className: "orbit orbit-a"
   },
   {
     name: "Black MOR Frames",
     sku: "DJ-FRM-BLK",
     image: "/assets/catalog/products/black_morframes_front.jpeg",
-    className: "orbit orbit-b",
+    className: "orbit orbit-b"
   },
   {
     name: "Red Sunglasses",
     sku: "DJ-SNG-RED",
     image: "/assets/catalog/products/red_sunglasses_front.jpeg",
-    className: "orbit orbit-c",
-  },
+    className: "orbit orbit-c"
+  }
 ];
 
 function HoverCutout({ product, delta }) {
@@ -34,7 +34,7 @@ function HoverCutout({ product, delta }) {
     const sx = (local.x - 50) * 0.22;
     const sy = (local.y - 50) * 0.25;
     const blur = hovered ? 18 : 10;
-    return `drop-shadow(${sx}px ${sy}px ${blur}px rgba(43,32,52,0.35))`;
+    return `drop-shadow(${sx}px ${sy}px ${blur}px rgba(0,0,0,0.35))`;
   }, [hovered, local.x, local.y]);
 
   function onMove(event) {
@@ -64,7 +64,7 @@ function HoverCutout({ product, delta }) {
         />
       </div>
       <Link className="btn" href={`/checkout?sku=${product.sku}`}>
-        view
+        view product
       </Link>
     </motion.article>
   );
@@ -72,11 +72,7 @@ function HoverCutout({ product, delta }) {
 
 export function FloatingProductStage() {
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
-
-  const delta = useMemo(
-    () => ({ x: mouse.x - 50, y: mouse.y - 50 }),
-    [mouse.x, mouse.y]
-  );
+  const delta = useMemo(() => ({ x: mouse.x - 50, y: mouse.y - 50 }), [mouse.x, mouse.y]);
 
   function onMove(event) {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -103,7 +99,7 @@ export function FloatingProductStage() {
       <motion.div
         className="hover-light"
         animate={{
-          background: `radial-gradient(260px circle at ${mouse.x}% ${mouse.y}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 55%)`,
+          background: `radial-gradient(260px circle at ${mouse.x}% ${mouse.y}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 55%)`
         }}
         transition={{ type: "spring", stiffness: 120, damping: 22 }}
       />
@@ -116,11 +112,7 @@ export function FloatingProductStage() {
 
       <motion.article
         className="hero-product"
-        animate={{
-          x: delta.x * 0.9,
-          y: delta.y * 0.65,
-          rotate: delta.x * 0.03,
-        }}
+        animate={{ x: delta.x * 0.9, y: delta.y * 0.65, rotate: delta.x * 0.03 }}
         transition={{ type: "spring", stiffness: 88, damping: 21 }}
       >
         <Image
@@ -148,11 +140,9 @@ export function FloatingProductStage() {
       </Link>
 
       <p className="stage-caption">
-        Hyper-real motion pass: floating products react to pointer direction, with position-driven
-        lighting and shadows.
+        Products respond to pointer movement with subtle depth, shadow changes, and cinematic motion.
       </p>
     </section>
   );
 }
-
 

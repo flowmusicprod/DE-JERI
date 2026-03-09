@@ -10,13 +10,13 @@ const cardStyle = {
       fontFamily: "Manrope, sans-serif",
       fontSize: "16px",
       "::placeholder": {
-        color: "#a5acc0",
-      },
+        color: "#a5acc0"
+      }
     },
     invalid: {
-      color: "#f5aeb8",
-    },
-  },
+      color: "#ffbdbd"
+    }
+  }
 };
 
 export function CheckoutForm({ sku, productName, unitPrice }) {
@@ -42,7 +42,7 @@ export function CheckoutForm({ sku, productName, unitPrice }) {
       const intentRes = await fetch("/api/stripe/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sku, quantity, email }),
+        body: JSON.stringify({ sku, quantity, email })
       });
 
       const intentJson = await intentRes.json();
@@ -62,8 +62,8 @@ export function CheckoutForm({ sku, productName, unitPrice }) {
       const result = await stripe.confirmCardPayment(intentJson.clientSecret, {
         payment_method: {
           card,
-          billing_details: { email },
-        },
+          billing_details: { email }
+        }
       });
 
       if (result.error) {
@@ -90,11 +90,7 @@ export function CheckoutForm({ sku, productName, unitPrice }) {
         placeholder="Email for receipt"
         required
       />
-      <select
-        name="quantity"
-        value={quantity}
-        onChange={(event) => setQuantity(Number(event.target.value))}
-      >
+      <select name="quantity" value={quantity} onChange={(event) => setQuantity(Number(event.target.value))}>
         <option value={1}>Quantity: 1</option>
         <option value={2}>Quantity: 2</option>
         <option value={3}>Quantity: 3</option>
@@ -112,3 +108,4 @@ export function CheckoutForm({ sku, productName, unitPrice }) {
     </form>
   );
 }
+

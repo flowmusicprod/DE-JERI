@@ -5,8 +5,8 @@ import { products, brandContact } from "@/lib/data";
 
 export default function CatalogPage() {
   return (
-    <div className="shell scene-shell">
-      <div className="scene-content">
+    <div className="shell page-shell">
+      <div className="page-content">
         <Reveal>
           <p className="eyebrow">Catalog</p>
           <h1>Current + Archived Product Inventory</h1>
@@ -26,11 +26,11 @@ export default function CatalogPage() {
                   <div style={{ marginTop: "0.7rem" }}>
                     {product.stock === "Out of Stock" ? (
                       <a className="btn" href={`mailto:${brandContact.email}?subject=Restock%20Request%20${product.sku}`}>
-                        notify me
+                        Notify Me
                       </a>
                     ) : (
                       <Link className="btn" href={`/checkout?sku=${product.sku}`}>
-                        buy now
+                        Buy Now
                       </Link>
                     )}
                   </div>
@@ -43,3 +43,4 @@ export default function CatalogPage() {
     </div>
   );
 }
+

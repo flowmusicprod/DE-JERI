@@ -10,8 +10,9 @@ export function SiteFooter() {
         height={48}
         className="footer-logo"
       />
-      <p>DE&apos;JERI Atelier. Motion-first storefront for culture, drops, and visual identity.</p>
-      <p>Private admin access is restricted to approved operators.</p>
+      <p>DE&apos;JERI Atelier. Modern fashion platform + management dashboard.</p>
+      <p>Admin access is restricted to authorized operators.</p>
     </footer>
   );
 }
+

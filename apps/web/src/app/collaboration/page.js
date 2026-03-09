@@ -7,8 +7,8 @@ export default async function CollaborationPage({ searchParams }) {
   const submitted = params?.sent === "1";
 
   return (
-    <div className="shell scene-shell">
-      <div className="scene-content">
+    <div className="shell page-shell">
+      <div className="page-content">
         <Reveal>
           <p className="eyebrow">Collaboration</p>
           <h1>Build the Next Capsule with DE&apos;JERI</h1>
@@ -33,7 +33,7 @@ export default async function CollaborationPage({ searchParams }) {
               <h3>Linked Collab Catalog</h3>
               <p>Each approved collaboration can be tied to a dedicated catalog release in admin.</p>
               <Link className="btn" href="/catalog">
-                open catalog
+                Open Catalog
               </Link>
             </article>
           </div>
@@ -44,7 +44,7 @@ export default async function CollaborationPage({ searchParams }) {
             <h2>Collaboration Signup</h2>
           </Reveal>
           <article className="panel" style={{ marginTop: "0.8rem" }}>
-            {submitted ? <p className="eyebrow">application sent. The team will review and reach out.</p> : null}
+            {submitted ? <p className="eyebrow">Application sent. The team will review and reach out.</p> : null}
             <form method="post" action="/api/collaboration">
               <input name="fullName" placeholder="Full name" required />
               <input type="email" name="email" placeholder="Email address" required />
@@ -56,7 +56,7 @@ export default async function CollaborationPage({ searchParams }) {
               <input name="portfolioLink" placeholder="Portfolio or social link" />
               <textarea name="notes" placeholder="Tell us about your concept and availability." required />
               <button className="btn primary" type="submit">
-                submit application
+                Submit Application
               </button>
             </form>
           </article>
@@ -65,3 +65,4 @@ export default async function CollaborationPage({ searchParams }) {
     </div>
   );
 }
+

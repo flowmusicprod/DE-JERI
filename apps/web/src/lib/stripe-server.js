@@ -7,15 +7,12 @@ export function getStripeServer() {
     return stripe;
   }
 
-  const secretKey = process.env.STRIPE_SECRET_KEY;
-  if (!secretKey) {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
     return null;
   }
 
-  stripe = new Stripe(secretKey, {
-    apiVersion: "2025-02-24.acacia",
-  });
-
+  stripe = new Stripe(key, { apiVersion: "2025-02-24.acacia" });
   return stripe;
 }
 

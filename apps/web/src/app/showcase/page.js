@@ -7,8 +7,8 @@ const youtubeVideo = "https://www.youtube.com/embed/aqz-KE-bpKQ";
 
 export default function ShowcasePage() {
   return (
-    <div className="shell scene-shell">
-      <div className="scene-content">
+    <div className="shell page-shell">
+      <div className="page-content">
         <Reveal>
           <p className="eyebrow">Showcase</p>
           <h1>Past, Current, and Future Drops</h1>
@@ -46,7 +46,7 @@ export default function ShowcasePage() {
             />
             <div style={{ marginTop: "0.8rem" }}>
               <Link className="btn" href={socialLinks.youtube} target="_blank" rel="noreferrer">
-                open youtube channel
+                Open YouTube Channel
               </Link>
             </div>
           </div>
@@ -55,3 +55,4 @@ export default function ShowcasePage() {
     </div>
   );
 }
+

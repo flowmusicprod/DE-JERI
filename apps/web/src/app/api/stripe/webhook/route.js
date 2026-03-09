@@ -38,10 +38,10 @@ export async function POST(request) {
 
   if (supabase && event.type === "payment_intent.payment_failed") {
     const paymentIntent = event.data.object;
-    await supabase.from("orders").update({ status: paymentIntent.status }).eq(
-      "stripe_payment_intent_id",
-      paymentIntent.id
-    );
+    await supabase
+      .from("orders")
+      .update({ status: paymentIntent.status })
+      .eq("stripe_payment_intent_id", paymentIntent.id);
   }
 
   return NextResponse.json({ received: true });

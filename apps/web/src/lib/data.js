@@ -4,7 +4,7 @@ export const navItems = [
   { label: "Catalog", href: "/catalog" },
   { label: "Contact", href: "/contact" },
   { label: "Collaboration", href: "/collaboration" },
-  { label: "Social", href: "/social" },
+  { label: "Social", href: "/social" }
 ];
 
 export const releases = [
@@ -13,22 +13,22 @@ export const releases = [
     season: "Past",
     year: "2024",
     notes: "Street-luxury silhouettes with monochrome framing.",
-    image: "/assets/catalog/products/morblackshirt_front.jpeg",
+    image: "/assets/catalog/products/morblackshirt_front.jpeg"
   },
   {
     title: "MOR Frame Drop",
     season: "Current",
     year: "2025",
     notes: "Statement eyewear with editorial campaign styling.",
-    image: "/assets/catalog/products/black_morframes_front.jpeg",
+    image: "/assets/catalog/products/black_morframes_front.jpeg"
   },
   {
     title: "Atelier Heat",
     season: "Upcoming",
     year: "2026",
     notes: "Future release concept blending premium tee layers and tinted shades.",
-    image: "/assets/catalog/products/red_sunglasses_front.jpeg",
-  },
+    image: "/assets/catalog/products/red_sunglasses_front.jpeg"
+  }
 ];
 
 export const products = [
@@ -38,7 +38,7 @@ export const products = [
     sku: "DJ-MOR-BLK",
     price: 68,
     stock: "In Stock",
-    image: "/assets/catalog/products/morblackshirt_front.jpeg",
+    image: "/assets/catalog/products/morblackshirt_front.jpeg"
   },
   {
     id: "mor-white-shirt",
@@ -46,7 +46,7 @@ export const products = [
     sku: "DJ-MOR-WHT",
     price: 68,
     stock: "In Stock",
-    image: "/assets/catalog/products/morwhiteshirt_front.jpeg",
+    image: "/assets/catalog/products/morwhiteshirt_front.jpeg"
   },
   {
     id: "mor-red-shirt",
@@ -54,7 +54,7 @@ export const products = [
     sku: "DJ-MOR-RED",
     price: 68,
     stock: "Out of Stock",
-    image: "/assets/catalog/products/morredshirt_front.jpeg",
+    image: "/assets/catalog/products/morredshirt_front.jpeg"
   },
   {
     id: "black-mor-frames",
@@ -62,7 +62,7 @@ export const products = [
     sku: "DJ-FRM-BLK",
     price: 140,
     stock: "In Stock",
-    image: "/assets/catalog/products/black_morframes_front.jpeg",
+    image: "/assets/catalog/products/black_morframes_front.jpeg"
   },
   {
     id: "white-sunglasses",
@@ -70,7 +70,7 @@ export const products = [
     sku: "DJ-SNG-WHT",
     price: 120,
     stock: "Out of Stock",
-    image: "/assets/catalog/products/white_sunglasses_front.jpeg",
+    image: "/assets/catalog/products/white_sunglasses_front.jpeg"
   },
   {
     id: "red-sunglasses",
@@ -78,35 +78,36 @@ export const products = [
     sku: "DJ-SNG-RED",
     price: 120,
     stock: "In Stock",
-    image: "/assets/catalog/products/red_sunglasses_front.jpeg",
-  },
+    image: "/assets/catalog/products/red_sunglasses_front.jpeg"
+  }
 ];
 
 export const collaborations = [
   {
     name: "DE'JERI x City Heat Dance Unit",
     summary: "Performance capsule with athletic editorial direction.",
-    release: "Heat Motion Catalog",
+    release: "Heat Motion Catalog"
   },
   {
     name: "DE'JERI x Northline Visual Lab",
     summary: "Creative studio collaboration for brand campaign visuals.",
-    release: "Nightline Capsule",
-  },
+    release: "Nightline Capsule"
+  }
 ];
 
 export const brandContact = {
   email: "hello@dejeri.com",
   phone: "+1 (404) 555-0120",
-  address: "Atlanta, GA 30318, United States",
+  address: "Atlanta, GA 30318, United States"
 };
 
 export const socialLinks = {
   instagram: "https://www.instagram.com/dejeri/",
   tiktok: "https://www.tiktok.com/@dejeri",
-  youtube: "https://www.youtube.com/@dejeri",
+  youtube: "https://www.youtube.com/@dejeri"
 };
 
 export function findProductBySku(sku) {
   return products.find((product) => product.sku === sku);
 }
+

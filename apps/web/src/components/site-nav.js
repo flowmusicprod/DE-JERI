@@ -1,29 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { navItems } from "@/lib/data";
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="site-header">
       <nav className="main-nav shell">
-        <div className="nav-side nav-left desktop-only">
-          <Link href="/catalog">Catalog</Link>
-          <Link href="/showcase">Showcase</Link>
-          <Link href="/collaboration">Collabs</Link>
-        </div>
-
-        <button
-          type="button"
-          className="menu-toggle mobile-only"
-          onClick={() => setOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
-          aria-expanded={open}
-        >
+        <button className="mobile-toggle" type="button" onClick={() => setOpen((p) => !p)}>
           {open ? "Close" : "Menu"}
         </button>
 
@@ -38,7 +28,15 @@ export function SiteNav() {
           />
         </Link>
 
-        <div className="nav-side nav-right desktop-only">
+        <div className="nav-links desktop-only">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className={pathname === item.href ? "active" : ""}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="nav-actions desktop-only">
           <Link href="/social">IG</Link>
           <Link href="/social">TT</Link>
           <Link href="/atelier/login">Admin</Link>
@@ -60,3 +58,4 @@ export function SiteNav() {
     </header>
   );
 }
+

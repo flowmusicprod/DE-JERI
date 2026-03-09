@@ -8,24 +8,24 @@ import "./globals.css";
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-heading",
+  variable: "--font-heading"
 });
 
 const bodyFont = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
+  variable: "--font-body"
 });
 
 const monoFont = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-mono",
+  variable: "--font-mono"
 });
 
 export const metadata = {
   title: "DE'JERI | Atelier",
-  description: "DE'JERI fashion house website and admin dashboard",
+  description: "DE'JERI fashion house website and management dashboard"
 };
 
 export default function RootLayout({ children }) {
@@ -42,3 +42,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
