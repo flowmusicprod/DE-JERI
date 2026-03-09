@@ -1,0 +1,263 @@
+:root {
+  --onyx: #0e0e0e;
+  --porcelain: #f6f3ee;
+  --gold: #bfa37a;
+  --charcoal: #222;
+  --wine: #7a1f2b;
+  --line: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 22% 0%, #2b1a15 0%, #0e0e0e 45%, #060606 100%);
+  color: var(--porcelain);
+  font-family: var(--font-body), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.shell {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.top-banner {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  padding: 0.7rem 1rem;
+  background: #030303;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(14px);
+  background: rgba(12, 12, 12, 0.85);
+  border-bottom: 1px solid var(--line);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand-mark {
+  font-family: var(--font-heading), serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.12em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.nav-links a {
+  opacity: 0.72;
+  transition: opacity 0.25s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.hero {
+  min-height: 78vh;
+  padding: 7rem 0 4rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), serif;
+  line-height: 0.98;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 6vw, 5.4rem);
+}
+
+.hero p {
+  max-width: 52ch;
+  color: rgba(246, 243, 238, 0.85);
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
+.btn {
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.primary {
+  background: var(--gold);
+  color: #111;
+  font-weight: 700;
+}
+
+.hero-card,
+.panel {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1.2rem;
+}
+
+.tile {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.tile img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.tile-copy {
+  padding: 0.95rem;
+}
+
+.status {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+.status.out {
+  color: #f5aeb8;
+  border-color: rgba(245, 174, 184, 0.4);
+}
+
+.panel {
+  padding: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--porcelain);
+  font: inherit;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.site-footer {
+  display: grid;
+  gap: 0.4rem;
+  border-top: 1px solid var(--line);
+  margin-top: 2.5rem;
+  padding: 1.5rem 0 2rem;
+  color: rgba(246, 243, 238, 0.62);
+  font-size: 0.85rem;
+}
+
+.social-embed {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 920px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 4rem;
+  }
+
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
