@@ -3,6 +3,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { ExperienceGate } from "@/components/experience-gate";
+import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
 const headingFont = Cormorant_Garamond({
@@ -35,7 +36,9 @@ export default function RootLayout({ children }) {
         <ExperienceGate />
         <SmoothScroll />
         <SiteNav />
-        <main>{children}</main>
+        <main>
+          <PageTransition>{children}</PageTransition>
+        </main>
         <SiteFooter />
       </body>
     </html>

@@ -18,7 +18,7 @@ export function SiteNav() {
         </div>
         <Link href="/" className="brand-mark" aria-label="DE'JERI Home">
           <Image
-            src="/assets/brand/logos/Transparent/dejeri_black_trans.png"
+            src="/assets/brand/logos/Transparent/dejeri_white_trans.png"
             alt="DE'JERI"
             width={170}
             height={58}

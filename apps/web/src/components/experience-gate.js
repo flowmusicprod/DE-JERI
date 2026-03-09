@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const STORAGE_KEY = "dejeri_experience_entered";
 
@@ -31,6 +32,14 @@ export function ExperienceGate() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
           >
+            <Image
+              src="/assets/brand/logos/Transparent/dejeri_white_trans.png"
+              alt="DE'JERI"
+              width={170}
+              height={54}
+              className="gate-logo"
+              priority
+            />
             <p className="eyebrow">DE&apos;JERI Experience</p>
             <h1 className="gate-title">Enter the world of DE&apos;JERI</h1>
             <p>
@@ -51,4 +60,3 @@ export function ExperienceGate() {
     </AnimatePresence>
   );
 }
-
