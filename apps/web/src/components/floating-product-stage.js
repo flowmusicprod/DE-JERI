@@ -95,8 +95,8 @@ export function FloatingProductStage() {
         </div>
         <p className="stage-brand">DE&apos;JERI</p>
         <div className="stage-icons">
-          <span>?</span>
-          <span>?</span>
+          <span>Live</span>
+          <span>Studio</span>
         </div>
       </div>
 
@@ -140,7 +140,7 @@ export function FloatingProductStage() {
       <aside className="selector-card">
         <p className="eyebrow">Product selector</p>
         <h3>MOR Red Shirt</h3>
-        <p>Mouse brush interaction: dynamic light and shadow over product surfaces.</p>
+        <p>Dynamic pointer lighting adds realistic depth and floating shadow shifts.</p>
       </aside>
 
       <Link className="btn shop-pill" href="/catalog">
