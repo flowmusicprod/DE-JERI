@@ -150,6 +150,155 @@ p {
   overflow: hidden;
 }
 
+.immersive-home {
+  position: relative;
+}
+
+.immersive-hero {
+  min-height: calc(100vh - 120px);
+  margin-top: 1rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 1rem;
+  background: linear-gradient(150deg, #c7bfd0, #b7aec8 40%, #a49dbc 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.immersive-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.24), transparent 48%);
+  pointer-events: none;
+}
+
+.immersive-copy {
+  align-self: end;
+  padding: clamp(0.5rem, 2vw, 1.2rem);
+  z-index: 2;
+}
+
+.immersive-copy .hero-title,
+.immersive-copy p {
+  color: #fcfbff;
+}
+
+.immersive-copy .btn {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.immersive-copy .btn.primary {
+  background: #121212;
+  color: #fff;
+}
+
+.floating-stage {
+  position: relative;
+  min-height: 640px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.stage-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.float-item {
+  position: absolute;
+  width: min(280px, 38%);
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  background: rgba(247, 244, 255, 0.95);
+  box-shadow: 0 18px 42px rgba(20, 12, 36, 0.26);
+  color: #111;
+  z-index: 1;
+}
+
+.float-item.item-a {
+  left: 4%;
+  top: 10%;
+}
+
+.float-item.item-b {
+  left: 34%;
+  top: 6%;
+  z-index: 3;
+}
+
+.float-item.item-c {
+  right: 4%;
+  top: 24%;
+}
+
+.float-item.item-d {
+  left: 22%;
+  bottom: 4%;
+}
+
+.float-img-wrap {
+  padding: 0.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.float-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.float-meta {
+  padding: 0.7rem;
+}
+
+.float-meta .eyebrow {
+  color: #666;
+}
+
+.float-meta h3 {
+  font-size: 1.05rem;
+  margin: 0.2rem 0 0.5rem;
+}
+
+.float-meta .btn {
+  color: #111;
+  border-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.62rem;
+}
+
+.float-meta .btn:hover {
+  color: #fff;
+}
+
+.studio-lineup {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  background: linear-gradient(135deg, #f6f6f9, #ece8f6);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.studio-cell {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  box-shadow: 0 12px 24px rgba(19, 17, 29, 0.16);
+  padding: 0.35rem;
+}
+
+.studio-cell img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
 .hero-copy {
   padding: clamp(1rem, 4vw, 3.4rem);
   display: grid;
@@ -353,6 +502,44 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .immersive-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-stage {
+    min-height: 900px;
+  }
+
+  .float-item {
+    width: 72%;
+  }
+
+  .float-item.item-a {
+    left: 4%;
+    top: 3%;
+  }
+
+  .float-item.item-b {
+    left: 24%;
+    top: 23%;
+  }
+
+  .float-item.item-c {
+    left: 6%;
+    top: 44%;
+    right: auto;
+  }
+
+  .float-item.item-d {
+    left: 22%;
+    top: 64%;
+    bottom: auto;
+  }
+
+  .studio-lineup {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .nav-links {
     justify-content: flex-start;
     white-space: nowrap;
@@ -360,4 +547,3 @@ textarea {
     padding-bottom: 0.2rem;
   }
 }
-

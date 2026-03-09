@@ -1,42 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { products, releases } from "@/lib/data";
+import { FloatingProductStage } from "@/components/floating-product-stage";
+import { brandContact, products, releases } from "@/lib/data";
+
+const studioLineup = [
+  "/assets/catalog/products/morblackshirt_front.jpeg",
+  "/assets/catalog/products/morwhiteshirt_front.jpeg",
+  "/assets/catalog/products/morredshirt_front.jpeg",
+  "/assets/catalog/products/black_morframes_front.jpeg",
+];
 
 export default function HomePage() {
   return (
-    <div className="shell">
-      <section className="hero">
-        <Reveal>
-          <div className="hero-copy">
-            <p className="eyebrow">Experience DE&apos;JERI</p>
-            <h1 className="hero-title">Street Luxury Made to Feel Cinematic.</h1>
-            <p>
-              An immersive fashion space inspired by motion-first digital storytelling, designed to
-              make every drop feel like an event.
-            </p>
-            <div className="cta-row">
-              <Link className="btn primary" href="/catalog">
-                Enter Catalog
-              </Link>
-              <Link className="btn" href="/showcase">
-                Watch Showcase
-              </Link>
-            </div>
+    <div className="shell immersive-home">
+      <section className="immersive-hero">
+        <div className="immersive-copy">
+          <p className="eyebrow">DE&apos;JERI Digital Atelier</p>
+          <h1 className="hero-title">Fashion in Motion. Products in Space.</h1>
+          <p>
+            Explore a floating studio where every piece responds subtly to movement and every drop is
+            presented like a premium campaign.
+          </p>
+          <div className="cta-row">
+            <Link className="btn primary" href="/catalog">
+              Shop Collection
+            </Link>
+            <Link className="btn" href="/showcase">
+              View Releases
+            </Link>
           </div>
-        </Reveal>
-        <Reveal delay={0.12}>
-          <article className="hero-card">
-            <Image
-              src="/assets/catalog/products/morredshirt_front.jpeg"
-              alt="DE'JERI campaign model"
-              width={820}
-              height={980}
-              className="hero-image"
-              priority
-            />
-          </article>
-        </Reveal>
+        </div>
+        <FloatingProductStage />
+      </section>
+
+      <section className="section">
+        <div className="section-title">
+          <h2>Studio Product Lineup</h2>
+          <Link className="btn" href="/catalog">
+            Open Catalog
+          </Link>
+        </div>
+        <article className="studio-lineup panel">
+          {studioLineup.map((src, index) => (
+            <div key={src} className="studio-cell">
+              <Image src={src} alt={`DE'JERI studio product ${index + 1}`} width={460} height={460} />
+            </div>
+          ))}
+        </article>
       </section>
 
       <section className="section">
@@ -81,9 +92,15 @@ export default function HomePage() {
                     {product.stock}
                   </span>
                   <div style={{ marginTop: "0.7rem" }}>
-                    <Link className="btn" href={`/checkout?sku=${product.sku}`}>
-                      {product.stock === "Out of Stock" ? "Notify Me" : "Buy Now"}
-                    </Link>
+                    {product.stock === "Out of Stock" ? (
+                      <a className="btn" href={`mailto:${brandContact.email}?subject=Restock%20Request%20${product.sku}`}>
+                        Notify Me
+                      </a>
+                    ) : (
+                      <Link className="btn" href={`/checkout?sku=${product.sku}`}>
+                        Buy Now
+                      </Link>
+                    )}
                   </div>
                 </div>
               </article>
